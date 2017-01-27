@@ -8,7 +8,21 @@ var Restaurant = require('../models/restaurant');
 var Activity = require('../models/activity');
 
 router.get("/", function(req, res, next){
-  res.render("index");
+  var objects = {};
+  Hotel.findAll({})
+  .then(function(hotels) {
+    objects.hotels = hotels;
+    return Restaurant.findAll({});
+  })
+  .then(function (restaurants) {
+    objects.restaurants = restaurants;
+    return Activity.findAll({});
+  })
+  .then(function(activities) {
+    objects.activities = activities;
+    res.render('index', objects);
+  })
+  .catch(next);
 });
 
 router.post("/", function(req, res, next){

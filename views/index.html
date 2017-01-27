@@ -1,9 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+      <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" href="/stylesheets/style.css">
   </head>
   <body>
-      <h1>Index Page!!</h1>
+      <form method="POST" action="/">
+      <div class="form-group">
+          <label for="hotel">Hotel</label>
+          <select>
+            {% for hotel in hotels %}
+              <option>
+                {{ hotel | hotelName }}
+              </option>
+              {% endfor %}
+          </select>
+      </div>
+      <div class="form-group">
+          <label for="restaurant">Restaurant</label>
+            <select>
+            {% for restaurant in restaurants %}
+              <option>
+                {{ restaurant | restaurantName }}
+              </option>
+              {% endfor %}
+          </select>
+      </div>
+      <div class="form-group">
+          <label for="activity">Activity</label>
+          <select>
+            {% for activity in activities %}
+              <option>
+                {{ activity | activityName }}
+              </option>
+              {% endfor %}
+          </select>
+      </div>
+      </form>
   </body>
 </html>
