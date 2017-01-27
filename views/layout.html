@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <title>Trip Planner - {% block title %}{% endblock %}</title>
+  <head>
+    <!-- Stylesheets go here! -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css ">
+    <link rel="stylesheet" href="stylesheets/tripplanner.css ">
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="navbar-header">TripPlanner</div>
+    </nav>
+
+
+    <div class="content">
+    {% block content %}
+    {% endblock %}
+    </div>
+
+    <p>"Let's plan our trip"</p>
+
+    <!-- Script tags go here! -->
+    <script src="http://localhost:3000/bootstrap/js/bootstrap.min.js"></script>
+    <script src="http://localhost:3000/jquery/jquery.min.js"></script>
+
+  </body>
+</html>
